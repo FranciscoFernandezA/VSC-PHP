@@ -105,10 +105,11 @@ function datosAsignaturas(array $materias) : array{
         else{
             $resultado[$nombreMateria]['media'] = 0;
         }
+        $resultado[$nombreMateria]['max']['alumno'] = $max['alumno'];
+        $resultado[$nombreMateria]['max']['nota'] = $max['nota'];
         $resultado[$nombreMateria]['suspensos'] = $suspensos;
         $resultado[$nombreMateria]['aprobados'] = $aprobados; 
-//        $resultado[$nombreMateria]['max']['alumno'] = $max['alumno'];
-//        $resultado[$nombreMateria]['max']['nota'] = $max['nota'];
+
         
         
     }
