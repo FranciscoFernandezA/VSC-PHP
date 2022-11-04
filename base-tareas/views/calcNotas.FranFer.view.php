@@ -1,6 +1,6 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Iterativas 08</h1>
+    <h1 class="h3 mb-0 text-gray-800">Calculo Notas</h1>
 
 </div>
 <!-- Content Row -->
@@ -54,7 +54,8 @@
     if(isset($data['resultado'])){
     ?>
     <!--Para parte 2 -->
-    <div class="col-lg-4 col-12">
+     <!--Aprueban todo -->
+    <div class="col-lg-3 col-12">
         <div class="alert alert-success">
             <ol>
             <?php 
@@ -67,8 +68,9 @@
             </ol>
         </div>
     </div>
-    <div class="col-lg-4 col-12">
-        <div class="alert alert-warning">
+     <!--Suspenden 1-->
+    <div class="col-lg-3 col-12">
+        <div class="alert alert-primary ">
             <ol>
             <?php 
             foreach($resultado['alumnos'] as $nombre => $datos){
@@ -80,7 +82,22 @@
             </ol>
         </div>
     </div>
-    <div class="col-lg-4 col-12">
+         <!--Suspenden 1 o mas-->
+    <div class="col-lg-3 col-12">
+        <div class="alert alert-warning ">
+            <ol>
+            <?php 
+            foreach($resultado['alumnos'] as $nombre => $datos){
+                if($datos['suspensos'] >= 1){
+                    echo "<li>$nombre</li>";
+                }
+            }
+            ?>
+            </ol>
+        </div>
+    </div>
+     <!--Repiten-->
+    <div class="col-lg-3 col-12">
         <div class="alert alert-danger">
             <ol>
             <?php 
@@ -106,7 +123,7 @@
             <!-- Card Body -->
             <div class="card-body">
                 <!--<form action="./?sec=formulario" method="post">                   -->
-                <form method="post" action="./?sec=iterativas08">
+                <form method="post" action="./?sec=calcNotas.FranFer">
                     <!--<input type="hidden" name="sec" value="iterativas01" />-->
                     <div class="mb-3">
                         <label for="texto">Json Notas:</label>

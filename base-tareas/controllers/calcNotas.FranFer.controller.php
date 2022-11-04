@@ -116,6 +116,6 @@ function datosAsignaturas(array $materias) : array{
 }
 
 include 'views/templates/header.php';
-include 'views/iterativas08.view.php';
+include 'views/calcNotas.FranFer.view.php';
 include 'views/templates/footer.php';
 
